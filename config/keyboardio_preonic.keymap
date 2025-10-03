@@ -8,7 +8,7 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
-#include "zmk-helpers/helper.h"
+
 
 #define LOWER 2
 #define RAISE 1
@@ -37,7 +37,7 @@
     };
 
 
-        behaviors {
+    behaviors {
             as: auto_shift {
                 compatible = "zmk,behavior-hold-tap";
                 label = "AUTO_SHIFT";
@@ -50,7 +50,15 @@
 
         };
 
-
+    macros {
+        accent_cir: accent_cir {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp RA(N6) &kp e>
+                ;
+        };
+    };
 
 
 
@@ -79,7 +87,7 @@
                                                                                                                &trans     &trans     &trans
 
  &kp ESC     &kp F1      &kp F2      &kp F3      &kp F4      &kp F5      &kp F6      &kp F7       &kp F8       &kp F9     &kp F12    &kp EQUAL
- &trans      &trans      &trans      &trans      &trans      &trans      &kp HOME    &kp END &kp LS(RBKT) &kp LBKT   &kp RBKT   &kp DEL
+ &trans      &trans      &trans      &accent_cir      &trans      &trans      &kp HOME    &kp END &kp LS(RBKT) &kp LBKT   &kp RBKT   &kp DEL
  &kp CAPS    &trans      &trans      &trans      &trans      &trans      &kp INS    &kp DEL     &kp BSPC       &kp LEFT_BRACE  &kp RIGHT_BRACE     &trans
  &trans      &trans      &trans      &kp TCOPY    &kp TPASTE      &trans      &trans      &trans       &kp STAR       &kp PLUS     &kp BACKSLASH     &kp PIPE
  &trans      &trans      &kp RALT    &trans      &trans            &trans            &trans       &kp HOME       &kp PG_UP     &kp PG_DN     &kp END

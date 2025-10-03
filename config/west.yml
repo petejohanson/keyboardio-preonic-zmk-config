@@ -4,8 +4,7 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: keyboardio
       url-base: https://github.com/vrenaville
-    - name: urob
-      url-base: https://github.com/urob
+
     # Additional modules containing boards/shields/custom code can be listed here as well
     # See https://docs.zephyrproject.org/3.2.0/develop/west/manifest.html#projects
   projects:
@@ -16,8 +15,6 @@ manifest:
     - name: keyboardio-preonic-zmk-module
       remote: keyboardio
       revision: main 
-    - name: zmk-helpers
-      remote: urob
-      revision: main
+
   self:
     path: config
